@@ -10,4 +10,10 @@ namespace AppBundle\Entity;
  */
 class LessonRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findAllArray()
+    {
+        return $this->createQueryBuilder('g')
+            ->getQuery()
+            ->getArrayResult();
+    }
 }
